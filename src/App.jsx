@@ -1,27 +1,18 @@
-import { createBrowserRouter } from 'react-router-dom';
-import Contact from './components/contact';
+import { Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/about';
+import Contact from './components/contact';
 
-let App = createBrowserRouter([
-  {
+let App = () => {
+
+  return (
+    <>
     
-    path: "/",
-    element:<Home/>
-
-  },
-  {
-    
-    path: "/contact",
-    element:<Contact/>
-
-  },
-  {
-    
-    path: "/about",
-    element:<About/>
-
-  },
-])
+    <Route path="/" exact component={<Home/>} />
+    <Route path="/contact" exact component={<About/>} />
+      <Route path="/about" exact component={<Contact />} />
+      </>
+  )
+}
 
 export default App;
